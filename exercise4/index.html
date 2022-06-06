@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Quando eu irei morrer?</title>
+</head>
+<body>
+    <form action="" method="post">
+        <fieldset>
+            <legend>Quanto tempo eu tenho de vida?</legend>
+            <fieldset>
+                <legend>Gênero</legend>
+                <input type="radio" id="female" value="female" name=gender required />
+                <label for="female">Feminino</label>
+                <input type="radio" id="male" value="male" name=gender />
+                <label for="male">Masculino</label>
+            </fieldset>
+            <fieldset>
+                <legend>Idade</legend>
+                <input type="date" id="birthday" name="Data de nascimento" />
+            </fieldset>
+            <button type="reset">Limpar</button>
+            <button type="button" id="discover">Descobrir</button>
+            <p id="result"></p>
+        </fieldset>
+    </form>
+    <script src="./index.js" defer></script>
+</body>
+</html>
