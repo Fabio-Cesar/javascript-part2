@@ -52,12 +52,6 @@ document.querySelector('#birthday').onblur = function() {
     birth[0] = parseInt(birth[0]);
     birth[1] = parseInt(birth[1]);
     birth[2] = parseInt(birth[2]);
-    console.log(birth[0]);
-    console.log(typeof(birth[0]));
-    console.log(birth[1]);
-    console.log(birth[2]);
-    console.log(birth.length);
-    console.log(typeof(birth.length));
 }
 
 document.querySelector('#female').onclick = function () {
