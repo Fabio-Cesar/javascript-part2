@@ -10,6 +10,7 @@
 }
 
 body {
+    font-family: 'Lato', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,8 +58,8 @@ form {
 }
 
 h1 {
-    font-size: 150%;
-    font-weight: 600;
+    font-size: 140%;
+    font-weight: 700;
     color: #673bb9;
 }
 
