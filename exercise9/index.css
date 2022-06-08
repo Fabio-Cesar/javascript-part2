@@ -19,7 +19,7 @@ body {
 
 body::after {
     content: "";
-    background-image: url(./background-img.webp);
+    background-image: url(./background-img.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
