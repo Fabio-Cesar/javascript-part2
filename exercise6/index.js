@@ -6,7 +6,7 @@ function calcimc() {
         alert("Algum dos valores inseridos é inválido! Insira somente números!")
     }
     else {
-        const imc = weight / (height * height);
+        const imc = (weight / (height * height)).toFixed(3);
         document.querySelector("#result").innerText += "IMC = " + imc;
         if (imc < 18.5) {
             document.querySelector("#result").innerText += " (abaixo do peso)";
