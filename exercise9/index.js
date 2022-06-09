@@ -1,9 +1,9 @@
 function sortBrazil() {
     const randomNumber = Math.random() * 100;
-    document.querySelector("#result-gender").textContent = 'Gênero:'
+    document.querySelector("#result-gender").textContent = 'Gênero: '
     document.querySelector("#result-age").textContent = 'Idoso (S/N)? ';
     if (randomNumber <= 48.3) {
-        document.querySelector("#result-gender").innerText += ' Homem';
+        document.querySelector("#result-gender").textContent += 'Homem';
         if(randomNumber <= (48.3 * 0.167)) {
             document.querySelector("#result-age").textContent += 'S';
         }
@@ -12,7 +12,7 @@ function sortBrazil() {
         }
     }
     else {
-        document.querySelector("#result-gender").innerText += ' Mulher';
+        document.querySelector("#result-gender").textContent += 'Mulher';
         if(randomNumber <= (51.7 * 0.167 + 48.3)) {
             document.querySelector("#result-age").textContent += 'S';
         }
