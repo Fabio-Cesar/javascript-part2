@@ -1,0 +1,9 @@
+img {
+    display: none;
+    width: 200px;
+    height: 180px;
+}
+
+#lit-bomb {
+    cursor: pointer;
+}
