@@ -12,6 +12,7 @@ function sendMsg() {
         chatLog.textContent += `\n${chatText}`;
     }
     chatLog.scrollTop = chatLog.scrollHeight - 154;
+    chatMsg.value = "";
 }
 
 function sendMsg2(e) {
@@ -23,8 +24,9 @@ function sendMsg2(e) {
         else {
             chatLog.textContent += `\n${chatText}`;
         }
+        chatLog.scrollTop = chatLog.scrollHeight - 154;
+        chatMsg.value = "";
     }
-    chatLog.scrollTop = chatLog.scrollHeight - 154;
 }
 
 function clearChat() {
