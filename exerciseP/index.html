@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Tabela de Produtos Cadastrados</title>
+</head>
+<body>
+    <header>
+        <h1>Cadastre seus produtos!</h1>
+    </header>
+    <main>
+        <label for="product-name">Nome do Produto:</label>
+        <input id="product-name" type="text" />
+        <label for="product-description">Descrição:</label>
+        <input id="product-description" type="text" />
+        <label for="product-price">Valor:</label>
+        <input id="product-price" type="text" />
+        <button id="add-product" type="button">Adicionar produto</button>
+        <button id="list-products" type="button">Listar produtos cadastrados</button>
+    </main>
+    <section id="status-message">
+    </section>
+    <section>
+        <table id="products-table">
+            <tr>
+                <th>Produto</th>
+                <th>Valor</th>
+                <th>Editar</th>
+                <th>Apagar</th>
+            </tr>
+        </table>
+    </section>
+    <section id="info-section"></section>
+    <script src="./index.js" defer></script>
+</body>
+</html>
