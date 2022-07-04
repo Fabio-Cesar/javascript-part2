@@ -15,8 +15,6 @@ function addEvent(target) {
         const path = window.location.pathname;
         const onStateChange = new CustomEvent('stateChange', { detail: { route: path } });
         window.dispatchEvent(onStateChange);
-        routeLinks = document.querySelectorAll(".route");
-        routeLinks.forEach(addEvent);
     });
 }
 
@@ -50,6 +48,4 @@ window.addEventListener('popstate', function(e) {
     const path = window.location.pathname;
     const onStateChange = new CustomEvent('stateChange', { detail: { route: path } });
     window.dispatchEvent(onStateChange);
-    routeLinks = document.querySelectorAll(".route");
-    routeLinks.forEach(addEvent);
 })
