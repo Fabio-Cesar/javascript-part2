@@ -12,8 +12,7 @@ function addEvent(target) {
         event.preventDefault();
         const pathFix = target.href.split('/');
         changePath(pathFix[pathFix.length - 1]);
-        const template = window.location.pathname;
-        const onStateChange = new CustomEvent('stateChange', { detail: { path: template } });
+        const onStateChange = new CustomEvent('stateChange', { detail: { path: window.location.pathname } });
         window.dispatchEvent(onStateChange);
     });
 }
@@ -30,7 +29,7 @@ function changePath(pathName) {
 window.addEventListener('stateChange', function(e) { 
     switch (e.detail.path) {
         case '/exerciseW/':
-            pageContent.innerHTML = ``;
+            pageContent.innerHTML = `<p>Página Inicial</p>`;
             break;
         case '/exerciseW/brigadeiros':
             brigadeiros.createBrigadeiros();
@@ -46,8 +45,12 @@ window.addEventListener('stateChange', function(e) {
     }
 })
 
+window.addEventListener('load', function() {
+    const onStateChange = new CustomEvent('stateChange', { detail: { path: window.location.pathname } });
+    window.dispatchEvent(onStateChange);
+})
+
 window.addEventListener('popstate', function() {
-    const template = window.location.pathname;
-    const onStateChange = new CustomEvent('stateChange', { detail: { path: template } });
+    const onStateChange = new CustomEvent('stateChange', { detail: { path: window.location.pathname } });
     window.dispatchEvent(onStateChange);
 })
