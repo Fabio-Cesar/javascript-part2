@@ -1,5 +1,11 @@
 const pageContent = document.querySelector("#page-content");
 const routeLinks = document.querySelectorAll(".route");
+const routes = {
+    'home': 0,
+    'brigadeiros': 1,
+    'cupcakes': 2,
+    'doces': 3
+}
 
 import * as brigadeiros from './modules/brigadeiros.js';
 import * as cupcakes from './modules/cupcakes.js';
@@ -12,32 +18,34 @@ function addEvent(target) {
         event.preventDefault();
         const pathFix = target.href.split('/');
         changePath(pathFix[pathFix.length - 1]);
-        const onStateChange = new CustomEvent('stateChange', { detail: { path: window.location.pathname } });
-        window.dispatchEvent(onStateChange);
     });
 }
 
 function changePath(pathName) {
     if (pathName == "home") {
         history.pushState({pathName}, '', `./`);
+        const onStateChange = new CustomEvent('stateChange', { detail: { path: routes[pathName] } });
+        window.dispatchEvent(onStateChange);
     }
     else {
         history.pushState({pathName}, '', `./${pathName}`);
+        const onStateChange = new CustomEvent('stateChange', { detail: { path: routes[pathName] } });
+        window.dispatchEvent(onStateChange);
     }
 }
 
 window.addEventListener('stateChange', function(e) { 
     switch (e.detail.path) {
-        case '/exerciseW/':
+        case 0:
             pageContent.innerHTML = `<p>Página Inicial</p>`;
             break;
-        case '/exerciseW/brigadeiros':
+        case 1:
             brigadeiros.createBrigadeiros();
             break;
-        case '/exerciseW/cupcakes':
+        case 2:
             cupcakes.createCupcakes();
             break;
-        case '/exerciseW/doces':
+        case 3:
             doces.createDoces();
             break;
         default:
@@ -46,11 +54,15 @@ window.addEventListener('stateChange', function(e) {
 })
 
 window.addEventListener('load', function() {
-    const onStateChange = new CustomEvent('stateChange', { detail: { path: window.location.pathname } });
+    const pathLocation = location.pathname.split('/');
+    const path = pathLocation[pathLocation.length - 1];
+    const onStateChange = new CustomEvent('stateChange', { detail: { path: routes[path] } });
     window.dispatchEvent(onStateChange);
 })
 
 window.addEventListener('popstate', function() {
-    const onStateChange = new CustomEvent('stateChange', { detail: { path: window.location.pathname } });
+    const pathLocation = location.pathname.split('/');
+    const path = pathLocation[pathLocation.length - 1];
+    const onStateChange = new CustomEvent('stateChange', { detail: { path: routes[path] } });
     window.dispatchEvent(onStateChange);
 })
