@@ -55,14 +55,14 @@ window.addEventListener('stateChange', function(e) {
 
 window.addEventListener('load', function() {
     const pathLocation = location.pathname.split('/');
-    const path = pathLocation[pathLocation.length - 1];
-    const onStateChange = new CustomEvent('stateChange', { detail: { path: routes[path] } });
+    const template = pathLocation[pathLocation.length - 1];
+    const onStateChange = new CustomEvent('stateChange', { detail: { path: routes[template] } });
     window.dispatchEvent(onStateChange);
 })
 
 window.addEventListener('popstate', function() {
     const pathLocation = location.pathname.split('/');
-    const path = pathLocation[pathLocation.length - 1];
-    const onStateChange = new CustomEvent('stateChange', { detail: { path: routes[path] } });
+    const template = pathLocation[pathLocation.length - 1];
+    const onStateChange = new CustomEvent('stateChange', { detail: { path: routes[template] } });
     window.dispatchEvent(onStateChange);
 })
