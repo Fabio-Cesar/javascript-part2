@@ -1,6 +1,7 @@
 const pageContent = document.querySelector("#page-content");
 const routeLinks = document.querySelectorAll(".route");
 const routes = {
+    '': 0,
     'home': 0,
     'brigadeiros': 1,
     'cupcakes': 2,

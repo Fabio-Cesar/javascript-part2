@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <title>API Moedas (em Real)</title>
+</head>
+<body>
+    <main>
+        <select id="coin-code">
+            <option value="USD">Dólar Americano</option>
+            <option value="CAD">Dólar Canadense</option>
+            <option value="EUR">Euro</option>
+            <option value="GBP">Libra Esterlina</option>
+            <option value="ARS">Peso Argentino</option>
+            <option value="JPY">Iene Japonês</option>
+        </select>
+        <label for="start-date">Data de Início</label>
+        <input id="start-date" type="date" />
+        <label for="end-date">Date de Fim</label>
+        <input id="end-date" type="date" />
+        <button id="show-results" type="button">Exibir</button>
+    </main>
+    <section id="coin-table"></section>
+    <script src="./index.js" defer></script>
+</body>
+</html>
