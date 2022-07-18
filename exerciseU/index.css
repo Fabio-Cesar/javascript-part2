@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
+body, main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+#reset-button {
+    display: none;
+}
